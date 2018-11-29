@@ -1,0 +1,54 @@
+{
+  "name": "ews-intranet",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "egg": "^2.2.1",
+    "egg-moe": "^1.0.44",
+    "egg-scripts": "^2.5.0",
+    "egg-socket.io": "^4.1.5",
+    "ping": "^0.2.2",
+    "speedtest-net": "^1.4.3"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^6.0.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-ews-intranet --sticky",
+    "stop": "egg-scripts stop --title=egg-server-ews-intranet",
+    "dev": "egg-bin dev --sticky",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "setup": "cd frontend/ && npm i --production --registry=https://registry.npm.taobao.org",
+    "build": "cd frontend/ && node build/build.js",
+    "docker": "egg-scripts start --title=egg-server-ews-intranet --sticky"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "egg": {
+    "framework": "egg-moe"
+  },
+  "author": "DerekYeung",
+  "license": "MIT"
+}
